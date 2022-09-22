@@ -186,7 +186,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="4dp"
-            android:backgroundTint="@color/accent_color2"
+            android:backgroundTint="#7367F0"
             android:textColor="@color/secondary_color"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toEndOf="@id/column_1_right"

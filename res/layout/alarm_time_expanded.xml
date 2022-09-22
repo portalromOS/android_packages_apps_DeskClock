@@ -176,7 +176,7 @@
         android:paddingEnd="0dp"
         android:textAllCaps="false"
         android:textAppearance="@style/body"
-        android:textColor="@color/accent_color"
+        android:textColor="#7367F0"
         android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/start_guide_thin"
         app:layout_constraintTop_toBottomOf="@id/vibrate_onoff"

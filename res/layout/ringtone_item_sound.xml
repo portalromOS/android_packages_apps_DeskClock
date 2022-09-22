@@ -80,7 +80,7 @@
                 android:importantForAccessibility="no"
                 android:scaleType="center"
                 android:visibility="gone"
-                app:tint="@color/accent_color"
+                app:tint="#7367F0"
                 tools:visibility="visible"/>
 
         </RelativeLayout>
