@@ -234,9 +234,7 @@ public final class StopwatchFragment extends DeskClockFragment {
             case RUNNING:
                 doAddLap();
                 break;
-            case PAUSED:
-                doShare();
-                break;
+
         }
     }
 
@@ -291,11 +289,6 @@ public final class StopwatchFragment extends DeskClockFragment {
                 break;
             case PAUSED:
                 left.setVisibility(VISIBLE);
-                right.setClickable(true);
-                right.setVisibility(VISIBLE);
-                final Drawable icShare = Utils.getVectorDrawable(context, R.drawable.ic_share);
-                right.setImageDrawable(icShare);
-                right.setContentDescription(resources.getString(R.string.sw_share_button));
                 break;
         }
     }
@@ -347,35 +340,6 @@ public final class StopwatchFragment extends DeskClockFragment {
         }
     }
 
-    /**
-     * Send stopwatch time and lap times to an external sharing application.
-     */
-    private void doShare() {
-        // Disable the fab buttons to avoid double-taps on the share button.
-        updateFab(BUTTONS_DISABLE);
-
-        final String[] subjects = getResources().getStringArray(R.array.sw_share_strings);
-        final String subject = subjects[(int) (Math.random() * subjects.length)];
-        final String text = mLapsAdapter.getShareText();
-
-        @SuppressLint("InlinedApi")
-        @SuppressWarnings("deprecation")
-        final Intent shareIntent = new Intent(Intent.ACTION_SEND)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
-                .putExtra(Intent.EXTRA_SUBJECT, subject)
-                .putExtra(Intent.EXTRA_TEXT, text)
-                .setType("text/plain");
-
-        final Context context = getActivity();
-        final String title = context.getString(R.string.sw_share_button);
-        final Intent shareChooserIntent = Intent.createChooser(shareIntent, title);
-        try {
-            context.startActivity(shareChooserIntent);
-        } catch (ActivityNotFoundException anfe) {
-            LogUtils.e("Cannot share lap data because no suitable receiving Activity exists");
-            updateFab(BUTTONS_IMMEDIATE);
-        }
-    }
 
     /**
      * Record and add a new lap ending now.
