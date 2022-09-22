@@ -83,7 +83,7 @@
                 app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:backgroundTint="#7367F0" />
+                android:backgroundTint="@color/accent_color2" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
@@ -109,7 +109,7 @@
                 app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toEndOf="@id/fab"
                 app:layout_constraintTop_toTopOf="parent"
-                android:backgroundTint="#7367F0"/>
+                android:backgroundTint="@color/accent_color2"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
